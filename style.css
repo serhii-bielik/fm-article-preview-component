@@ -1,0 +1,61 @@
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ff: 'Manrope', sans-serif;
+  --clr-dgblue: #48556a;
+  --clr-dblue: #6d7f97;
+  --clr-gblue: #9eafc2;
+  --clr-lgblue: #ecf2f8;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: 13px;
+}
+
+.container {
+}
+.article {
+}
+.header {
+}
+.content {
+}
+.content__title {
+}
+.content__text {
+}
+.author {
+}
+.author__avatar {
+}
+.author__details {
+}
+.author__name {
+}
+.author__date {
+}
+.share {
+}
+.fa-sharp {
+}
+.fa-solid {
+}
+.fa-share {
+}
+.share-panel {
+}
+.fa-brands {
+}
+.fa-square-facebook {
+}
+.fa-twitter {
+}
+.fa-pinterest {
+}
