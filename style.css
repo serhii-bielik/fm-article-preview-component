@@ -35,6 +35,7 @@ body {
 .article {
   display: grid;
   grid-template-rows: 200px 1fr;
+  max-width: 730px;
   background-color: var(--clr-white);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -98,7 +99,6 @@ body {
   color: var(--clr-dblue);
   background-color: var(--clr-lgblue);
   cursor: pointer;
-  z-index: 3;
   transition: all 0.3s ease;
 }
 
@@ -110,7 +110,6 @@ body {
 .share-active {
   color: var(--clr-white);
   background-color: var(--clr-dgblue);
-  
 }
 
 .share-active:hover {
@@ -125,7 +124,6 @@ body {
   position: absolute;
   top: 5rem;
   left: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
   padding: 0 2rem 0 2rem;
@@ -138,12 +136,12 @@ body {
 .share-panel span {
   padding-right: 0.5rem;
 }
-.share-panel a {
+.share-panel > a {
   font-size: 1.4rem;
   color: var(--clr-white);
 }
-.share-panel a:hover,
-.share-panel a:focus {
+.share-panel > a:hover,
+.share-panel > a:focus {
   color: var(--clr-gblue);
 }
 
@@ -151,4 +149,91 @@ body {
   opacity: 1;
   top: 0;
   left: 0;
+}
+
+@media (min-width: 40em) {
+  .article {
+    grid-template-columns: 280px 1fr;  
+    overflow: unset;  
+  }
+
+  .header {
+    min-height: 280px;
+    grid-row: 1 / 3;    
+    background-size: cover;
+    background-position: center left;
+    opacity: 0.95;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .content {
+    grid-row: 1 / 2;
+    padding: 2rem 3rem 0 3rem;
+  }
+  .content__title {
+    font-size: 0.9rem;
+  }
+  .content__text {
+    line-height: 120%;
+  }
+
+  .bottom {
+    grid-row: 2 / 3;
+    padding: 0 1rem 1rem 1rem;
+  }
+  .author {
+    padding-top: 0;
+  }
+
+  .share {
+    position: relative;
+  }
+
+  .share-panel {
+    top: -220%;
+    left: -312%;
+    width: auto;
+    height: auto;
+    font-size: 0.7rem;
+    gap: 0.2rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    border-radius: 0.4rem;
+    opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 10px -5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .share-panel::after {
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 10px);
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;  
+    border-top: 10px solid var(--clr-dgblue);
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.3) );
+  }
+
+  .show-share {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 40em) {
+  .content__title {
+    font-size: 1.0rem;
+  }
+  .content__text {
+    line-height: 120%;
+  }
+}
+
+@media (min-width: 48em) {
+  .content__title {
+    font-size: 1.3rem;
+  }
+  .content__text {
+    line-height: 150%;
+  }
 }
